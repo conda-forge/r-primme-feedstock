@@ -1,4 +1,4 @@
-{% set version = '3.0-0' %}
+{% set version = "3.1-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/PRIMME_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/PRIMME/PRIMME_{{ version }}.tar.gz
-  sha256: 24d24dc26b1bf81ed951407da4405e7d9b4e4cdc12eead47ea389787956e7cf3
+  sha256: 7f91faa6dde1eb71215ef0a48821591f96363c9e9a1af8a21b57d985418f8dbf
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
-  skip: True  # [win]
+  merge_build_host: true  # [win]
+  number: 0
+  skip: true  # [win]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -49,13 +49,10 @@ test:
 about:
   home: https://github.com/primme/primme
   license: GPL-3
-  summary: ' R interface to PRIMME, a C library for computing a few eigenvalues and their corresponding
-    eigenvectors of a real symmetric or complex Hermitian matrix.  It can also compute
-    singular values and vectors of a square or rectangular matrix.  It can find largest,
-    smallest, or interior singular/eigenvalues and can use preconditioning to accelerate
-    convergence. '
+  summary: ' R interface to PRIMME, a C library for computing a few eigenvalues and their corresponding eigenvectors of a real symmetric or complex Hermitian matrix.  It can also compute singular values and vectors of a square or rectangular matrix.  It can find largest, smallest, or interior singular/eigenvalues and can
+    use preconditioning to accelerate convergence. '
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
