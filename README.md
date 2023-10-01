@@ -3,6 +3,7 @@ About r-primme-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-primme-feedstock/blob/main/LICENSE.txt)
 
+
 About r-primme
 --------------
 
@@ -11,6 +12,7 @@ Home: https://github.com/primme/primme
 Package license: GPL-3.0-only
 
 Summary:  R interface to PRIMME, a C library for computing a few eigenvalues and their corresponding eigenvectors of a real symmetric or complex Hermitian matrix.  It can also compute singular values and vectors of a square or rectangular matrix.  It can find largest, smallest, or interior singular/eigenvalues and can use preconditioning to accelerate convergence. 
+
 About r-primme
 --------------
 
