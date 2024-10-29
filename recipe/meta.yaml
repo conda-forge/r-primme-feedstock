@@ -10,9 +10,11 @@ source:
     - {{ cran_mirror }}/src/contrib/PRIMME_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/PRIMME/PRIMME_{{ version }}.tar.gz
   sha256: a08637edc732905c16b81874ade69e966214d46a0bcbb216fac8e66be2ed7c64
+  patches:
+    - patches/0001-fix-paths-for-include.patch
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -20,7 +22,6 @@ build:
     - '*/R.dll'        # [win]
     - '*/Rblas.dll'    # [win]
     - '*/Rlapack.dll'  # [win]
-  skip: true  # [win]
 
 requirements:
   build:
@@ -54,7 +55,6 @@ about:
   license: GPL-3.0-only
   summary: ' R interface to PRIMME, a C library for computing a few eigenvalues and their corresponding eigenvectors of a real symmetric or complex Hermitian matrix.  It can also compute singular values and vectors of a square or rectangular matrix.  It can find largest, smallest, or interior singular/eigenvalues and can
     use preconditioning to accelerate convergence. '
-  license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 

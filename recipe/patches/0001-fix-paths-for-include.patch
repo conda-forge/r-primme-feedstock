@@ -1,0 +1,25 @@
+From a88c085c8074e7c772882ff3eda8572ad861af23 Mon Sep 17 00:00:00 2001
+From: Daniel Nachun <daniel.nachun@gmail.com>
+Date: Sat, 26 Oct 2024 21:38:41 -0700
+Subject: [PATCH] fix paths for include
+
+---
+ src/primme/make_primme | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/primme/make_primme b/src/primme/make_primme
+index 3fdeafd..341df84 100644
+--- a/src/primme/make_primme
++++ b/src/primme/make_primme
+@@ -32,7 +32,7 @@ LAPACK_SOURCES = zhegv.cpp
+ 
+ LAPACK_OBJS = $(patsubst %.cpp,%.o,$(LAPACK_SOURCES))
+ 
+-INCLUDE_PRIMME = $(INCLUDE) -I../../inst/include/c_interface -Iinclude
++INCLUDE_PRIMME = $(subst ;, ,$(subset \,/,$(INCLUDE))) -I../../inst/include/c_interface -Iinclude
+ 
+ #
+ # Compilation
+-- 
+2.47.0
+
